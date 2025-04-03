@@ -34,6 +34,18 @@ A interface foi separada em três interfaces especializadas: `Printable`, `Scann
 
 ---
 
+### 📌 Caso 3: Interface `NotificationSender`
+#### ❌ Problema:
+A interface `NotificationSender` definia métodos para envio de notificações por e-mail, SMS e push, obrigando todas as classes a implementarem métodos que poderiam não ser necessários.  
+Exemplo de problemas:
+- Um serviço que só envia e-mails era forçado a implementar métodos de SMS e push, resultando em exceções ou métodos vazios.  
+- Isso tornava o código rígido e contrário ao princípio da segregação de interfaces.  
+
+#### ✅ Solução:
+A interface foi segmentada em `EmailSender`, `SMSSender` e `PushNotificationSender`, garantindo que cada implementação tenha apenas os métodos necessários. Agora, classes que enviam notificações podem escolher quais interfaces implementar, sem carregar métodos desnecessários.
+
+---
+
 ## 📚 Contribuições
 Se desejar sugerir melhorias ou novos casos para estudo, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
