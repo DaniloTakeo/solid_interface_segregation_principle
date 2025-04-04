@@ -46,6 +46,18 @@ A interface foi segmentada em `EmailSender`, `SMSSender` e `PushNotificationSend
 
 ---
 
+### 📌 Caso 4: Interface `Authenticator`
+
+#### ❌ Problema:
+A interface `Authenticator` incluía autenticação por senha, digital, reconhecimento facial e token.  
+Classes que só precisavam de um tipo de autenticação eram obrigadas a implementar todos os métodos.
+
+#### ✅ Solução:
+Interfaces segmentadas: `PasswordAuthenticator`, `FingerprintAuthenticator`, `FaceAuthenticator` e `TokenAuthenticator`.  
+As implementações agora são mais coesas e livres de responsabilidades desnecessárias.
+
+---
+
 ## 📚 Contribuições
 Se desejar sugerir melhorias ou novos casos para estudo, sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
